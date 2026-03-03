@@ -1,0 +1,13 @@
+{
+    "name": "urbanslot",
+    "version": "1.0.0",
+    "description": "UrbanSlot — Premium P2P Parking Marketplace",
+    "private": true,
+    "scripts": {
+        "dev:server": "cd server && npm run dev",
+        "dev:client": "cd client && npm run dev",
+        "install:all": "cd server && npm install && cd ../client && npm install",
+        "start:server": "cd server && npm start",
+        "start:client": "cd client && npm run preview"
+    }
+}
