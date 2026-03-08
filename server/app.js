@@ -24,7 +24,7 @@ const httpServer = http.createServer(app);
 // Trust Render's reverse proxy so rate limiters see the real client IP.
 app.set('trust proxy', 1);
 
-const allowedOrigins = process.env.CLIENT_URL ? process.env.CLIENT_URL.split(',').map(url => url.trim()) : ['http://localhost:5173'];
+const allowedOrigins = process.env.CLIENT_URL ? process.env.CLIENT_URL.split(',').map(url => url.trim().replace(/\/+$/, '')) : ['http://localhost:5173'];
 
 // ======= Socket.io setup =======
 const io = new Server(httpServer, {
