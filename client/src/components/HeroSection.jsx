@@ -148,10 +148,10 @@ const HeroSection = () => {
                     transition={{ delay: 0.18, type: 'spring', stiffness: 200 }}
                     style={{ position: 'relative', width: '100%', maxWidth: 640, margin: '0 auto 48px' }}
                 >
-                    <div className={focused ? 'glass-blue' : 'search-pill'} style={{ borderRadius: 100, display: 'flex', alignItems: 'center', gap: 0, overflow: 'hidden', transition: 'box-shadow 0.2s, border-color 0.2s', ...(focused ? { borderColor: 'rgba(37,99,235,0.35)', boxShadow: '0 0 0 3px rgba(37,99,235,0.1), 0 8px 32px rgba(37,99,235,0.12)' } : {}) }}>
+                    <div className={`hero-search-container ${focused ? 'glass-blue' : 'search-pill'}`} style={{ borderRadius: 100, display: 'flex', alignItems: 'center', gap: 0, overflow: 'hidden', transition: 'box-shadow 0.2s, border-color 0.2s', ...(focused ? { borderColor: 'rgba(37,99,235,0.35)', boxShadow: '0 0 0 3px rgba(37,99,235,0.1), 0 8px 32px rgba(37,99,235,0.12)' } : {}) }}>
 
                         {/* Location input */}
-                        <div style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 10, padding: '0 16px 0 20px', borderRight: '1px solid var(--border)', height: 56 }}>
+                        <div className="search-loc-col" style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 10, padding: '0 16px 0 20px', borderRight: '1px solid var(--border)', height: 56 }}>
                             <MapPin size={18} color="var(--blue-600)" style={{ flexShrink: 0 }} />
                             <input
                                 ref={inputRef}
@@ -173,7 +173,7 @@ const HeroSection = () => {
                         </div>
 
                         {/* Vehicle type */}
-                        <div style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '0 14px', height: 56, flexShrink: 0 }}>
+                        <div className="search-vehicle-col" style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '0 14px', height: 56, flexShrink: 0 }}>
                             {VEHICLE_OPTS.map(({ value, label, icon: Icon }) => (
                                 <button
                                     key={value}
@@ -195,7 +195,7 @@ const HeroSection = () => {
                         {/* Search button */}
                         <button
                             onClick={handleSearch}
-                            className="btn btn-primary"
+                            className="btn btn-primary search-btn-col"
                             style={{ margin: 6, borderRadius: 100, padding: '0 22px', height: 44, fontSize: 14, fontWeight: 700, flexShrink: 0, gap: 7 }}
                         >
                             <Search size={15} /> Search

@@ -360,7 +360,7 @@ const Navbar = () => {
                         <button
                             onClick={() => setMenu(v => !v)}
                             aria-label="Open menu"
-                            style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text)', padding: 6 }}
+                            style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text)', padding: 6 }}
                             className="mobile-menu-btn"
                         >
                             {menuOpen ? <X size={22} /> : <Menu size={22} />}

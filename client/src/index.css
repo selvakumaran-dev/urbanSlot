@@ -1204,9 +1204,14 @@ input[type=range] {
     flex-wrap: wrap;
   }
 
-  /* Hide inline results search on mobile (too cramped) */
+  /* Show inline results search on mobile but stack it */
   .search-inline-input {
-    display: none !important;
+    width: 100% !important;
+    margin-bottom: 8px;
+  }
+
+  .search-inline-input .input {
+    width: 100% !important;
   }
 
   /* ── Spot detail: single column ── */
@@ -1290,5 +1295,34 @@ input[type=range] {
 
   .spot-detail-layout {
     grid-template-columns: 1fr 320px !important;
+  }
+}
+
+/* ──── Hero Search Bar Enhancements ──── */
+@media (max-width: 640px) {
+  .hero-search-container {
+    flex-direction: column !important;
+    border-radius: 16px !important;
+  }
+
+  .hero-search-container>div {
+    width: 100%;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .search-loc-col {
+    height: 52px !important;
+  }
+
+  .search-vehicle-col {
+    justify-content: center !important;
+    height: 52px !important;
+  }
+
+  .hero-search-container>button {
+    width: calc(100% - 12px) !important;
+    border-radius: 12px !important;
+    margin: 6px !important;
   }
 }
