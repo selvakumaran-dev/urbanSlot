@@ -21,6 +21,9 @@ import geoRoutes from './src/routes/geo.routes.js';
 const app = express();
 const httpServer = http.createServer(app);
 
+// Trust Render's reverse proxy so rate limiters see the real client IP.
+app.set('trust proxy', 1);
+
 const allowedOrigins = process.env.CLIENT_URL ? process.env.CLIENT_URL.split(',').map(url => url.trim()) : ['http://localhost:5173'];
 
 // ======= Socket.io setup =======
