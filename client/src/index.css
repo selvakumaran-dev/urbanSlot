@@ -622,6 +622,10 @@ input[type=range] {
   display: revert;
 }
 
+.hide-mobile-text {
+  display: revert;
+}
+
 .show-mobile {
   display: none;
 }
@@ -1324,5 +1328,11 @@ input[type=range] {
     width: calc(100% - 12px) !important;
     border-radius: 12px !important;
     margin: 6px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .hide-mobile-text {
+    display: none !important;
   }
 }

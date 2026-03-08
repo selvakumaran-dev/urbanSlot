@@ -237,7 +237,7 @@ const Navbar = () => {
                     </Link>
 
                     {/* ── Right Side ── */}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
 
                         {user ? (
                             <>

@@ -151,7 +151,7 @@ const HeroSection = () => {
                     <div className={`hero-search-container ${focused ? 'glass-blue' : 'search-pill'}`} style={{ borderRadius: 100, display: 'flex', alignItems: 'center', gap: 0, overflow: 'hidden', transition: 'box-shadow 0.2s, border-color 0.2s', ...(focused ? { borderColor: 'rgba(37,99,235,0.35)', boxShadow: '0 0 0 3px rgba(37,99,235,0.1), 0 8px 32px rgba(37,99,235,0.12)' } : {}) }}>
 
                         {/* Location input */}
-                        <div className="search-loc-col" style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 10, padding: '0 16px 0 20px', borderRight: '1px solid var(--border)', height: 56 }}>
+                        <div className="search-loc-col" style={{ flex: 1, display: 'flex', alignItems: 'center', gap: 10, padding: '0 16px', borderRight: '1px solid var(--border)', height: 56, width: '100%' }}>
                             <MapPin size={18} color="var(--blue-600)" style={{ flexShrink: 0 }} />
                             <input
                                 ref={inputRef}
@@ -160,7 +160,7 @@ const HeroSection = () => {
                                 onFocus={() => setFocused(true)}
                                 onBlur={() => setTimeout(() => setFocused(false), 150)}
                                 placeholder="Where do you want to park?"
-                                style={{ flex: 1, border: 'none', outline: 'none', background: 'transparent', fontSize: 14.5, color: 'var(--text)', fontFamily: "'Inter', sans-serif" }}
+                                style={{ flex: 1, border: 'none', outline: 'none', background: 'transparent', fontSize: 14.5, color: 'var(--text)', fontFamily: "'Inter', sans-serif", width: '100%', minWidth: 0 }}
                             />
                             {/* Locate me */}
                             <button
@@ -173,7 +173,7 @@ const HeroSection = () => {
                         </div>
 
                         {/* Vehicle type */}
-                        <div className="search-vehicle-col" style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '0 14px', height: 56, flexShrink: 0 }}>
+                        <div className="search-vehicle-col" style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '0 14px', height: 56, flexShrink: 0, overflowX: 'auto' }}>
                             {VEHICLE_OPTS.map(({ value, label, icon: Icon }) => (
                                 <button
                                     key={value}
@@ -182,7 +182,7 @@ const HeroSection = () => {
                                     style={{
                                         background: vehicle === value ? 'var(--blue-600)' : 'var(--bg-3)',
                                         border: 'none', cursor: 'pointer', borderRadius: 8, width: 32, height: 32,
-                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
                                         color: vehicle === value ? '#fff' : 'var(--text-3)',
                                         transition: 'background 0.15s, color 0.15s',
                                     }}
@@ -198,7 +198,7 @@ const HeroSection = () => {
                             className="btn btn-primary search-btn-col"
                             style={{ margin: 6, borderRadius: 100, padding: '0 22px', height: 44, fontSize: 14, fontWeight: 700, flexShrink: 0, gap: 7 }}
                         >
-                            <Search size={15} /> Search
+                            <Search size={15} /> <span className="hide-mobile-text">Search</span>
                         </button>
                     </div>
 
